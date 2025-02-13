@@ -207,6 +207,3 @@ results = searcher.search(
     hybrid_weight=0.7
 )
 ```
-
-
-View the [demo notebook in Google Colab](https://colab.research.google.com/drive/120K6Ks9KCPSsT1yUjnuogRwv0hxpy6Z3?usp=sharing)
