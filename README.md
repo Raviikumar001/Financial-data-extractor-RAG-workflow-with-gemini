@@ -155,7 +155,7 @@ results = searcher.search(
 ```
 
 ## Performance Optimizations
-- Optimized batch processing (size: 32)
+- Optimized batch processing
 - Score normalization implementation
 - BM25 computation caching
 - Result deduplication
@@ -166,7 +166,7 @@ results = searcher.search(
 - Caching mechanisms
 - Duplicate result handling
 
-## Future Development Roadmap
+## Future Development 
 1. Financial term query expansion
 2. Context window optimization
 3. Enhanced metadata filtering capabilities
@@ -191,4 +191,22 @@ results = searcher.search(
 3. Initialize document processing pipeline
 4. Set up search parameters
 
-Jupyter Notebook Link Here[https://colab.research.google.com/drive/120K6Ks9KCPSsT1yUjnuogRwv0hxpy6Z3?usp=sharing]
+[Previous sections remain the same...]
+
+## Usage
+
+### Demo
+View the [demo notebook in Google Colab](https://colab.research.google.com/drive/120K6Ks9KCPSsT1yUjnuogRwv0hxpy6Z3?usp=sharing)
+
+### Basic Search Example
+```python
+searcher = HybridSearcher()
+results = searcher.search(
+    query="What was the revenue growth in Q3?",
+    k=3,
+    hybrid_weight=0.7
+)
+```
+
+
+View the [demo notebook in Google Colab](https://colab.research.google.com/drive/120K6Ks9KCPSsT1yUjnuogRwv0hxpy6Z3?usp=sharing)
