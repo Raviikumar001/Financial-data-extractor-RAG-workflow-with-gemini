@@ -190,4 +190,5 @@ results = searcher.search(
 2. Configure Pinecone credentials
 3. Initialize document processing pipeline
 4. Set up search parameters
-5. Deploy hybrid search system
+
+Jupyter Notebook Link Here[https://colab.research.google.com/drive/120K6Ks9KCPSsT1yUjnuogRwv0hxpy6Z3?usp=sharing]
