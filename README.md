@@ -160,17 +160,23 @@ results = searcher.search(
 - BM25 computation caching
 - Result deduplication
 
-## Technical Considerations
-- Memory-efficient batch processing
-- Consistent score normalization
-- Caching mechanisms
-- Duplicate result handling
+### Response Generation Pipeline
+
+The system generates responses through the following process:
+
+1. **Context Retrieval**
+   - Hybrid search returns relevant document chunks
+   - Top-k chunks selected as context
+
+2. **LLM Integration**
+   - Uses Gemini 2.0 Flash for response generation
+   - Context chunks are provided to LLM
+   - Responses are generated based on retrieved context
+
 
 ## Future Development 
 1. Financial term query expansion
 2. Context window optimization
-3. Enhanced metadata filtering capabilities
-4. Dynamic weight adjustment system
 
 ## Implementation Benefits
 - Combined semantic and keyword matching
@@ -184,6 +190,34 @@ results = searcher.search(
 - Pinecone account
 - SentenceTransformer
 - LlamaParse
+- Gemini API
+
+## Implementation Challenges & Solutions
+
+### PDF Data Extraction Challenges
+During development, several PDF extraction approaches were evaluated:
+
+1. **PyPDF2**
+   - Simple text extraction without formatting
+   - Fast but lost all table structure
+   - Not suitable for financial documents with complex tables
+
+2. **PyMuPDF4LLM**
+   - Better formatting retention
+   - Poor table extraction accuracy
+   - Tables were unstructured compared to original
+
+3. **Docling (IBM Deep Search)**
+   - Improved structural information
+   - Better table extraction
+   - Performance issues (≈5 seconds per page)
+   - Not scalable for large documents
+
+4. **LlamaParse (Selected Solution)**
+   - Superior table conversion accuracy
+   - Significantly faster processing
+   - Maintained formatting integrity
+   - Best balance of speed and accuracy
 
 ## Setup Instructions
 1. Install required dependencies
